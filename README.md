@@ -1,2 +1,2 @@
-# spam-umbrella-sdk-php
-An SDK for the Spam Umbrella Service
+# SDK for the Solic Service
+An SDK for the Solic Service. Code and information coming soon.
