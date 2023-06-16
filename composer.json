@@ -1,0 +1,25 @@
+{
+    "name": "justawebdev/spamumbrella",
+    "description": "An SDK for the Spam Umbrella Service",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "jenssegers/blade": "^1.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Solic\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Justin Thomas"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
