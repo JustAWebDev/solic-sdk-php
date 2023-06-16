@@ -1,6 +1,7 @@
 {
-    "name": "justawebdev/spamumbrella",
-    "description": "An SDK for the Spam Umbrella Service",
+    "name": "justawebdev/solic-sdk-php",
+    "description": "An SDK for the Solic Service",
+    "homepage": "https://github.com/JustAWebDev/solic-sdk-php",
     "type": "library",
     "require": {
         "php": ">=8.0",
