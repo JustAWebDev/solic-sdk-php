@@ -64,7 +64,7 @@
 </style>
 
 <div class="solic-form">
-    <form action="{{ $action }}" method="post">
+    <form id="{{ $data->name }}" action="{{ $action }}" method="post">
         <input type="hidden" name="csrf_token" value="{{ $data->csrf_token }}" />
         @foreach ($data->fields as $field)
         <div class="form-group {{ $field->field_token }}">
@@ -75,3 +75,9 @@
         <input type="submit" name="submit_button" value="Send" />
     </form>
 </div>
+
+@if ($escapeContent === false)
+    {!! $content !!}
+@else
+    {{ $content }}
+@endif

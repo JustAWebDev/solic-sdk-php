@@ -7,7 +7,7 @@ use Solic\View;
 echo "<h1>Solic Implementation Example</h1>";
 
 // Define your token
-$token = 'YJaFTMH5nF0tOcNytQpPsS7pF69QZdtxCC4EZFN7';
+$token = 'YOU API TOKEN HERE';
 
 // Create the service instance
 $service = new SolicService($token);
@@ -22,7 +22,11 @@ $contents = $response->getContents();
 
 // Take the content and spit it out in the form view
 $view = new View();
-echo $view->render($contents, 'index.php');
+echo $view->render($contents, '/examples/index.php');
+
+// we can also decode the json string and pass it in as an object
+//$contents = json_decode($contents);
+//echo $view->render($contents, '/examples/index.php');
 
 // if the form is submitted, push the data to the storeForm endpoint
 // the response will tell you if the form submission is considered spam.
