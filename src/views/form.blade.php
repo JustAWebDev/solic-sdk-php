@@ -34,7 +34,7 @@
     }
     .solic-form textarea{
         height:100px;
-        width: 55%;
+        width: 100%;
     }
     .solic-form input[type=submit],
     .solic-form input[type=button]{
@@ -67,10 +67,14 @@
     <form id="{{ $data->name }}" action="{{ $action }}" method="post">
         <input type="hidden" name="csrf_token" value="{{ $data->csrf_token }}" />
         @foreach ($data->fields as $field)
-        <div class="form-group {{ $field->field_token }}">
-            <label for="{{ $field->field_token }}">{{ $field->name }}</label>
-            <input type="{{ $field->type === 'honeypot' ? 'text' : $field->type }}" name="{{ $field->field_token }}" id="{{ $field->field_token }}" />
-        </div>
+            <div class="form-group {{ $field->field_token }}">
+                <label for="{{ $field->field_token }}">{{ $field->name }}</label>
+                @if ($field->type === 'textarea')
+                    <textarea name="{{ $field->field_token }}" id="{{ $field->field_token }}"></textarea>
+                @else
+                    <input type="{{ $field->type === 'honeypot' ? 'text' : $field->type }}" name="{{ $field->field_token }}" id="{{ $field->field_token }}" />
+                @endif
+            </div>
         @endforeach
         <input type="submit" name="submit_button" value="Send" />
     </form>
