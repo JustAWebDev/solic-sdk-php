@@ -43,8 +43,13 @@ class SolicService
         return $response->getBody();
     }
 
-    public function checkForm(array $data): StreamInterface
+    public function checkForm(array $data, ?string $ipAddress = null): StreamInterface
     {
+        if (!empty($ipAddress)) {
+            $data['ip_address'] = $ipAddress;
+        } else {
+            $data['ip_address'] = $_SERVER['REMOTE_ADDR'];
+        }
         $response = $this->client->post('forms/store', ['json' => $data]);
 
         return $response->getBody();
