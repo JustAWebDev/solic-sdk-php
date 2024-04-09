@@ -4,7 +4,7 @@
     "homepage": "https://github.com/JustAWebDev/solic-sdk-php",
     "type": "library",
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.1",
         "guzzlehttp/guzzle": "^7.5",
         "jenssegers/blade": "^1.4"
     },

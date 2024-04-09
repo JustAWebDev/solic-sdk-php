@@ -33,5 +33,5 @@ echo $view->render($contents, '/examples/index.php');
 if (!empty($_POST))
 {
     $postResponse = $service->checkForm($_POST);
-    echo $postResponse->getContents();
+    echo htmlspecialchars($postResponse->getContents());
 }
